@@ -63,7 +63,7 @@ with col3:
     FoodCourt = st.number_input("Combien d'euros avez vous dépensé au Food Court ?", min_value = 0, max_value = 100000)
 
 with col4:
-    Spa = st.number_input("Combien d'euros avez vous au Spa ?", min_value = 0, max_value = 10000)
+    Spa = st.number_input("Combien d'euros avez vous dépensé au Spa ?", min_value = 0, max_value = 10000)
 
     VRDeck = st.number_input("Combien d'euros avez vous dépensé au VRDeck ?", min_value = 0, max_value = 10000)
 
