@@ -13,9 +13,9 @@ st.set_page_config(
 st.title(':milky_way: Spaceship Titanic prédictions de survie')
 
 st.write('''SpaceShip Titanic est une base de donnée Kaggle comportant les données de 13000 passagers du vol interstellaire Titanic
-         ayant décolé en 2913. En passant, aux alentours d'Alpha Centauri le vol aurait disparu dans un nuage de poussière cosmique.
-         Au cours de l'accident de nombreux passagers se sont envolés vers une autre dimension. L'objectif du modèle est d'estimer
-         quelle type de profil ont pu disparaître.
+         ayant décolé en 2912. En passant, aux alentours d'Alpha Centauri le vol a eu une collision avec une anomalie spatiale camouflée
+         dans un nuage de poussière cosmique. Au cours de l'accident de nombreux passagers se sont envolés vers une autre dimension.
+         L'objectif de ce modéle est de prédire si un individu aurait disparu au cours de cette incident sur la base de ses caractéristiques.
 ''')
 
 # Chargement du model de prédiction
@@ -58,14 +58,14 @@ st.subheader('Dépense lors du voyage')
 col3, col4 = st.columns(2)
 
 with col3:
-    RoomService = st.number_input("Montant dépensé au RoomService", min_value = 0, max_value = 100000)
+    RoomService = st.number_input("Combien d'euros avez vous dépensé au Room Service ?", min_value = 0, max_value = 100000)
 
-    FoodCourt = st.number_input('Montant dépensé au Foodcourt', min_value = 0, max_value = 100000)
+    FoodCourt = st.number_input("Combien d'euros avez vous dépensé au Food Court ?", min_value = 0, max_value = 100000)
 
 with col4:
-    Spa = st.number_input('Montant dépensé au Spa', min_value = 0, max_value = 10000)
+    Spa = st.number_input("Combien d'euros avez vous au Spa ?", min_value = 0, max_value = 10000)
 
-    VRDeck = st.number_input('Montant dépensé au VRDeck', min_value = 0, max_value = 10000)
+    VRDeck = st.number_input("Combien d'euros avez vous dépensé au VRDeck ?", min_value = 0, max_value = 10000)
 
 
 # Création du profil et prédiction de survie
@@ -109,7 +109,7 @@ if button:
     prediction = model.predict(Individu)
 
     if prediction == True:
-        st.subheader(':smiley: Vous avez était transporté dans une autre dimension !!!')
+        st.subheader(':fog: Vous avez était transporté dans une autre dimension !!!')
 
     else:
-        st.subheader(":skull: Vous n'avez pas était transporté dans une autre dimension !!!")
+        st.subheader(":smiley: Vous n'avez pas était transporté dans une autre dimension !!!")
